@@ -1,14 +1,20 @@
 import { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+
+import Login from './pages/Login';
+import Home from './pages/Home';
 
 function App() {
-	const [count, setCount] = useState(0);
-
 	return (
-		<div className='App'>
-			<h1 className='text-2xl mt-28 text-pink-700'>Hello world</h1>
-		</div>
+		<Router>
+			<main>
+				<Switch>
+					<Route exact path='/' component={Home} />
+					<Route exact path='/login' component={Login} />
+				</Switch>
+			</main>
+		</Router>
 	);
 }
 
